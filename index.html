@@ -33,30 +33,25 @@
 
     <script src="https://unpkg.com/d3@5.15.0/dist/d3.js"></script>
     <script>
-      // const script = document.createElement('script')
-      // script.type = 'text/javascript'
-      // const mode = window.location.search.split('?')[1]
-      // switch (mode) {
-      //   case 'module':
-      //     script.type = 'module'
-      //     script.src = '/dist/viz-flowchart.module.js'
-      //     break;
-      //   case 'umd':
-      //     script.src = '/dist/viz-flowchart.umd.js'
-      //     break;
-      //   case 'vanilla':
-      //     script.src = '/dist/viz-flowchart.js'
-      //     break;
-      //   default:
-      //     script.type = 'module'
-      //     script.src = '/src/index.js'
-      // }
-      // document.body.appendChild(script)
+      // ?module -> built es module
+      // ?iife -> vanilla javascript
+      const script = document.createElement('script')
+      script.type = 'text/javascript'
+      const mode = window.location.search.split('?')[1]
+      switch (mode) {
+        case 'module':
+          script.type = 'module'
+          script.src = '/dist/viz-flowchart.module.js'
+          script.innerText = `import './dist/viz-flowchart.mjs'`
+          break;
+        case 'iife':
+          script.src = '/dist/viz-flowchart.js'
+          break;
+        default:
+          script.type = 'module'
+          script.src = '/src/index.js'
+      }
+      document.body.appendChild(script)
     </script>
-    <script type="module" src="src/index.js"></script>
-
-    <!-- <script type="text/javascript" src="dist/viz-flowchart.js"></script> -->
-    <!-- <script type="text/javascript" src="dist/viz-flowchart.umd.js"></script> -->
-    <!-- <script type="module" src="dist/viz-flowchart.module.js"></script> -->
   </body>
 </html>
