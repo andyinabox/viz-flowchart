@@ -13,7 +13,6 @@ const {
   scaleOrdinal,
   range,
   create,
-  select,
   path,
   schemeDark2,
 } = window.d3
@@ -126,24 +125,11 @@ svg {
 export default class VizFlowchart extends HTMLElement {
   constructor() {
     super();
-
     // set up shadow root
     this.attachShadow({ mode: 'open' });
-    const { actors, steps } = parseChildren(this.children);
     this.shadowRoot.innerHTML = template;
-    const el = this.shadowRoot.querySelector('.viz-container');
-
-    Object.assign(this, {
-      el,
-      actors,
-      steps
-    })
-    // set default options
     this.options = Object.assign({}, defaults)
-
-    this.setup()
   }
-
 
   static get observedAttributes() {
     return ['step']
@@ -154,16 +140,33 @@ export default class VizFlowchart extends HTMLElement {
   }
 
   connectedCallback() {
+    this.setup()
     this.update()
+  }
+
+  disconnectedCallback() {
+    this.teardown()
+  }
+
+
+  update() {
+    this.updateSteps()
+  }
+
+  teardown() {
+    // not sure what needs to happen here
   }
 
   setup() {
 
-    const {
+    const { actors, steps } = parseChildren(this.childNodes);
+    const el = this.shadowRoot.querySelector('.viz-container');
+
+    Object.assign(this, {
       el,
-      steps,
       actors,
-    } = this
+      steps
+    })
 
     const {
       stepHeight,
@@ -457,9 +460,5 @@ export default class VizFlowchart extends HTMLElement {
       p.closePath()
       return p.toString()
     })
-  }
-
-  update() {
-    this.updateSteps()
   }
 }
