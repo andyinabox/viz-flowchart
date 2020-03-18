@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>viz-flowchart</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <viz-flowchart>
+      <viz-actor id="user">User</viz-actor>
+      <viz-actor id="frontend">Frontend</viz-actor>
+      <viz-actor id="tenent">auth0 Tenent</viz-actor>
+      <viz-actor id="api">API</viz-actor>
+    
+      <viz-step from="user" to="frontend">
+        User clicks on the login link
+      </viz-step>
+      <viz-step from="frontend" to="frontend">
+        User clicks on the login link
+      </viz-step>
+      <viz-step from="frontend" to="tenent">
+        User clicks on the login link
+      </viz-step>
+      <viz-step from="tenent" to="api">
+        User clicks on the login link
+      </viz-step>
+      <viz-step from="api" to="frontend">
+        User clicks on the login link
+      </viz-step>
+      <viz-step from="frontend" to="user">
+        User clicks on the login link
+      </viz-step>
+    </viz-flowchart>
+
+    <script src="https://unpkg.com/d3@5.15.0/dist/d3.js"></script>
+    <script>
+      // const script = document.createElement('script')
+      // script.type = 'text/javascript'
+      // const mode = window.location.search.split('?')[1]
+      // switch (mode) {
+      //   case 'module':
+      //     script.type = 'module'
+      //     script.src = '/dist/viz-flowchart.module.js'
+      //     break;
+      //   case 'umd':
+      //     script.src = '/dist/viz-flowchart.umd.js'
+      //     break;
+      //   case 'vanilla':
+      //     script.src = '/dist/viz-flowchart.js'
+      //     break;
+      //   default:
+      //     script.type = 'module'
+      //     script.src = '/src/index.js'
+      // }
+      // document.body.appendChild(script)
+    </script>
+    <script type="module" src="src/index.js"></script>
+
+    <!-- <script type="text/javascript" src="dist/viz-flowchart.js"></script> -->
+    <!-- <script type="text/javascript" src="dist/viz-flowchart.umd.js"></script> -->
+    <!-- <script type="module" src="dist/viz-flowchart.module.js"></script> -->
+  </body>
+</html>

@@ -2,9 +2,15 @@
   "name": "viz-flowchart",
   "version": "0.1.0",
   "description": "A d3-based flow chart web component",
-  "main": "index.js",
+  "source": "src/index.js",
+  "umd:main": "dist/viz-flowchart.umd.js",
+  "module": "dist/viz-flowchart.module.js",
+  "main": "dist/viz-flowchart.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "microbundle --compress none",
+    "watch": "microbundle watch",
+    "serve": "servor . index.html 9000 --reload",
+    "dev": "concurrently \"npm run watch\" \"npm run serve\""
   },
   "repository": {
     "type": "git",
@@ -16,8 +22,13 @@
     "url": "https://github.com/andyinabox/viz-flowchart/issues"
   },
   "homepage": "https://github.com/andyinabox/viz-flowchart#readme",
-  "dependencies": {
-    "d3": "^5.15.0",
-    "haunted": "^4.7.0"
+  "dependencies": {},
+  "peerDependencies": {
+    "d3": "^5.15.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "microbundle": "^0.11.0",
+    "servor": "^3.2.0"
   }
 }
