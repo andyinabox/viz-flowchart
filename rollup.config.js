@@ -14,5 +14,9 @@ module.exports = {
       sourcemap: true,
     }
   ],
-  plugins: [terser()]
+  plugins: [terser()],
+  watch: {
+    exclude: '(node_modules|dist)/**',
+    include: '\.(js|html)$',
+  }
 };

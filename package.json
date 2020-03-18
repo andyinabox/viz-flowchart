@@ -1,6 +1,6 @@
 {
   "name": "@andyinabox/viz-flowchart",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A d3-based flow chart web component",
   "source": "src/index.js",
   "module": "dist/viz-flowchart.module.js",
@@ -8,7 +8,9 @@
   "scripts": {
     "prepare": "npm run build",
     "build": "rollup --config",
-    "dev": "servor . index.html 9000 --reload"
+    "watch": "rollup --watch --config",
+    "serve": "servor . index.html 9000 --reload",
+    "dev": "concurrently \"npm run watch\" \"npm run serve\""
   },
   "repository": {
     "type": "git",
