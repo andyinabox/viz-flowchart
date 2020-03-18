@@ -1,0 +1,23 @@
+{
+  "name": "viz-flowchart",
+  "version": "0.1.0",
+  "description": "A d3-based flow chart web component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/andyinabox/viz-flowchart.git"
+  },
+  "author": "Andy Dayton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andyinabox/viz-flowchart/issues"
+  },
+  "homepage": "https://github.com/andyinabox/viz-flowchart#readme",
+  "dependencies": {
+    "d3": "^5.15.0",
+    "haunted": "^4.7.0"
+  }
+}
