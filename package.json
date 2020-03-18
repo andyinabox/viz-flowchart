@@ -6,6 +6,7 @@
   "module": "dist/viz-flowchart.module.js",
   "main": "dist/viz-flowchart.js",
   "scripts": {
+    "prepare": "npm run build",
     "build": "rollup --config",
     "dev": "servor . index.html 9000 --reload"
   },

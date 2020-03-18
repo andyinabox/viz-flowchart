@@ -1,5 +1,4 @@
 import { terser } from "rollup-plugin-terser";
-// import sourcemaps from "rollup-plugin-sourcemaps";
 
 module.exports = {
   input: 'src/index.js',
@@ -10,7 +9,7 @@ module.exports = {
       sourcemap: true,
     },
     {
-      file: 'dist/viz-flowchart.mjs',
+      file: 'dist/viz-flowchart.module.js',
       format: 'es',
       sourcemap: true,
     }
