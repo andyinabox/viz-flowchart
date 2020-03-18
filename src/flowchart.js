@@ -153,6 +153,10 @@ export default class VizFlowchart extends HTMLElement {
     this.update()
   }
 
+  connectedCallback() {
+    this.update()
+  }
+
   setup() {
 
     const {
