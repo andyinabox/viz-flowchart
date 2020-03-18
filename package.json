@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/andyinabox/viz-flowchart.git"
   },
-  "author": "Andy Dayton",
+  "author": "Andy Dayton <amdayton@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/andyinabox/viz-flowchart/issues"
