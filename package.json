@@ -1,6 +1,6 @@
 {
   "name": "@andyinabox/viz-flowchart",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A d3-based flow chart web component",
   "source": "src/index.js",
   "module": "dist/viz-flowchart.module.js",
